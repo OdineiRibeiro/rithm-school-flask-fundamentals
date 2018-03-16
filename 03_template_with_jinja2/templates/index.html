@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Document</title>
-  </head>
-  <body>
-    <p>List of instructors</p>
-    <ul>
-      {% for instructor_name in names %}
-        <li>{{ instructor_name }}</li>
-      {% endfor %}
-    </ul>
+{% extends "base.html" %}
 
-    {% if name == 'Tom' %}
-      <p>Hello {{ name }}</p>
-    {% endif %}
-  </body>
-</html>
+{% block content %}
+  <p>List of instructors</p>
+  <ul>
+    {% for instructor_name in names %}
+      <li>{{ instructor_name }}</li>
+    {% endfor %}
+  </ul>
+
+  {% if name == 'Tom' %}
+    <p>Hello {{ name }}</p>
+  {% endif %}
+
+  <p>Tired of this page? Head over to <a href="{{ url_for('second') }}">the second page!</a></p>
+{% endblock %}
